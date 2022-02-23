@@ -75,3 +75,6 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- REST.nvim 
+keymap("n", "<leader>r", ":lua require('rest-nvim').run()<CR>", opts)
