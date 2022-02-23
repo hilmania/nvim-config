@@ -229,6 +229,17 @@ _G.packer_plugins = {
     path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
+  ["rest.nvim"] = {
+    config = { "\27LJ\2\nü\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\17show_headers\2\19show_http_info\2\rshow_url\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\5\renv_file\t.env\17yank_dry_run\2\26skip_ssl_verification\1\28result_split_horizontal\1\20jump_to_request\1\nsetup\14rest-nvim\frequire\0" },
+    loaded = true,
+    path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/rest.nvim",
+    url = "https://github.com/NTBBloodbath/rest.nvim"
+  },
   ["telescope-media-files.nvim"] = {
     loaded = true,
     path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/telescope-media-files.nvim",
@@ -253,14 +264,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/Users/gazafran/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: rest.nvim
+time([[Config for rest.nvim]], true)
+try_loadstring("\27LJ\2\nü\2\0\0\4\0\t\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\0024\3\0\0=\3\b\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\1\0\3\17show_headers\2\19show_http_info\2\rshow_url\2\14highlight\1\0\2\fenabled\2\ftimeout\3ñ\1\1\0\5\renv_file\t.env\17yank_dry_run\2\26skip_ssl_verification\1\28result_split_horizontal\1\20jump_to_request\1\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
+time([[Config for rest.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end
