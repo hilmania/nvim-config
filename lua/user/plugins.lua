@@ -109,6 +109,8 @@ return packer.startup(function(use)
         -- Open request results in a horizontal split
         result_split_horizontal = false,
         -- Skip SSL verification, useful for unknown certificates
+        result_split_in_place = false,
+
         skip_ssl_verification = false,
         -- Highlight request on run
         highlight = {
@@ -120,6 +122,13 @@ return packer.startup(function(use)
           show_url = true,
           show_http_info = true,
           show_headers = true,
+
+          formatters = {
+            json = "jq",
+            html = function(body)
+              return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
+            end
+          }
         },
         -- Jump to request line on run
         jump_to_request = false,
@@ -128,7 +137,8 @@ return packer.startup(function(use)
         yank_dry_run = true,
       })
     end
-  }  
+  }
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
